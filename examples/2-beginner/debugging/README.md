@@ -1,0 +1,1 @@
+Click the error link in console. It gives a very clear explanation of the problem at hand.

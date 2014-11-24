@@ -1,0 +1,1 @@
+Controller should not know about the view

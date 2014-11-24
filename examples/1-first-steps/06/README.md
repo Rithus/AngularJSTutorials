@@ -1,0 +1,2 @@
+The ngApp directive designates the root element of the application and is typically placed near the root element of the page.
+Using ng-strict-di forces applications to use explicit annotation style <div ng-app="sampleApplication" ng-strict-di>

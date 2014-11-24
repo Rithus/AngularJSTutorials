@@ -1,0 +1,14 @@
+<html data-ng-app>
+<head>
+<meta charset="utf-8">
+<title>Angularjs Filter Basic Example</title>
+<script
+	src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.3/angular.min.js"></script>
+</head>
+<body data-ng-init="players=['Federer','Nadal','Djokovic']">
+	Best Tennis Players In The World :
+	<ul>
+		<li data-ng-repeat="player in players">{{player | uppercase}}</li>
+	</ul>
+</body>
+</html>

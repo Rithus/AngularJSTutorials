@@ -1,0 +1,44 @@
+<html data-ng-app="playersApp">
+<head>
+<meta charset="utf-8">
+<title>Angular.js Example for Binding - Finding the selected
+	player</title>
+<script
+	src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.3/angular.min.js"></script>
+
+<script>
+  var playersApp = angular.module('playersApp', []);
+
+  playersApp.controller('PlayersController', function($scope) {
+
+    $scope.players = [{
+      "name": "Roger Federer",
+      "rank": 1
+    }, {
+      "name": "Novak Djokovic",
+      "rank": 2
+    }, {
+      "name": "Rafael Nadal",
+      "rank": 3
+    }];
+
+    $scope.selectedPlayer = null;
+
+    $scope.setSelectedPlayer = function(player) {
+      $scope.selectedPlayer = player;
+    }
+
+  });
+</script>
+</head>
+<body data-ng-controller="PlayersController">
+	<ul>
+		<li data-ng-repeat="player in players"
+			data-ng-click="setSelectedPlayer(player)">{{player.name}} - Rank
+			{{player.rank}}</li>
+	</ul>
+
+	<h3>Selected Player : {{selectedPlayer.name}}</h3>
+
+</body>
+</html>

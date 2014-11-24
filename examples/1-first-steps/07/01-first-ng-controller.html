@@ -1,0 +1,24 @@
+<html data-ng-app="playersApp">
+<head>
+<meta charset="utf-8">
+<title>Angularjs First Controller</title>
+<script
+	src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.3/angular.min.js"></script>
+
+<script>
+  var playersApp = angular.module('playersApp', []);
+  playersApp.controller('PlayersController', function($scope) {
+    $scope.players = [
+    {name: 'Federer', rank: 1},
+    {name: 'Nadal', rank: 2},
+    {name: 'Djokovic', rank: 3}];
+  });
+</script>
+
+</head>
+<body data-ng-controller="PlayersController">
+	<ul>
+		<li data-ng-repeat="player in players">{{player.name | uppercase}}</li>
+	</ul>
+</body>
+</html>

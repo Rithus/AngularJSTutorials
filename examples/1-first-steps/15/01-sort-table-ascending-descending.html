@@ -1,0 +1,45 @@
+<html data-ng-app="playersApp">
+<head>
+<meta charset="utf-8">
+<title>Angularjs Filter Second Example</title>
+<script
+	src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.3/angular.min.js"></script>
+
+<script>
+  var playersApp = angular.module('playersApp', []);
+
+  playersApp.controller('PlayersController', function($scope) {
+
+    $scope.players = [
+    {"name": "Roger Federer", "rank": 1},
+    {"name": "Novak Djokovic", "rank": 2},
+    {"name": "Rafael Nadal", "rank": 3}];
+
+    $scope.orderByColumn = 'rank';
+    $scope.isOrderInReverse = false;
+
+    $scope.reverseOrder = function(orderByColumn) {
+      $scope.isOrderInReverse = !$scope.isOrderInReverse;
+      $scope.orderByColumn = orderByColumn;
+    }
+
+  });
+</script>
+
+</head>
+<body data-ng-controller="PlayersController">
+	<table>		
+		<tr>
+			<th><a href="" data-ng-click="reverseOrder('name')">Name</a></th>
+			<th><a href="" data-ng-click="reverseOrder('rank')">Rank</a></th>
+		</tr>
+		<tr
+			data-ng-repeat="player in players | orderBy:orderByColumn:isOrderInReverse">
+			<td>{{player.name}}</td>
+			<td>{{player.rank}}</td>
+		</tr>		
+	</table>
+	<HR/>
+	<div>orderByColumn = {{orderByColumn}} : isOrderInReverse = {{isOrderInReverse}}</div>
+</body>
+</html>
